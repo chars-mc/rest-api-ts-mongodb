@@ -1,1 +1,30 @@
-http://localhost:3000
+###
+GET http://localhost:3000/api/contacts
+###
+GET http://localhost:3000/api/contacts/contacturl
+
+###
+POST http://localhost:3000/api/contacts
+Content-Type: application/json
+
+{
+   "name": "Contact name",
+   "url": "contacturl",
+   "email": "contact@email.com",
+   "phone": "0000000000",
+   "photo": "contact.jpg"
+}
+
+###
+PUT http://localhost:3000/api/contacts/contacturl
+Content-Type: application/json
+
+{
+   "name": "Contact new name",
+   "url": "contacturl",
+   "email": "contact@email.com",
+   "phone": "0000000000",
+   "photo": "contact.jpg"
+}
+###
+DELETE http://localhost:3000/api/contacts/contacturl

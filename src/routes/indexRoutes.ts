@@ -1,4 +1,5 @@
 import { Request, Response, Router } from 'express';
+import { ContactRoutes } from './contactRoutes';
 
 export class IndexRoutes {
    router: Router;
@@ -9,8 +10,6 @@ export class IndexRoutes {
    }
 
    private routes() {
-      this.router.get('/', (req: Request, res: Response) => {
-         res.send('Welcome');
-      });
+      this.router.use('/api/contacts', new ContactRoutes().router);
    }
 }
