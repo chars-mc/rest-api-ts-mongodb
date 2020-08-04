@@ -1,6 +1,8 @@
 import express, { Application, Router } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import passport from 'passport';
+import passportMiddleware from './middlewares/passport';
 
 import { IndexRoutes } from './routes/indexRoutes';
 
@@ -31,6 +33,8 @@ export class App {
       this.app.use(express.urlencoded({extended: false}));
       this.app.use(express.json());
       this.app.use(cors());
+      this.app.use(passport.initialize());
+      passport.use(passportMiddleware);
    }
 
    private routes() {
