@@ -26,5 +26,37 @@ Content-Type: application/json
    "phone": "0000000000",
    "photo": "contact.jpg"
 }
+
 ###
 DELETE http://localhost:3000/api/contacts/contacturl
+
+###
+GET http://localhost:3000/api/users
+
+###
+GET http://localhost:3000/api/users/username
+
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+   "name": "user name",
+   "email": "user@email.com",
+   "password": "password",
+   "username": "username"
+}
+
+### 
+PUT http://localhost:3000/api/users/username
+Content-Type: application/json
+
+{
+   "name": "new user name",
+   "email": "user@email.com",
+   "password": "password",
+   "username": "username"
+}
+
+###
+DELETE http://localhost:3000/api/users/username
